@@ -28,9 +28,20 @@ const svg = name => {
   return cache[name];
 };
 
+// tokens.json для разработчиков и таблица токенов в отчёте
+const tokens = require('./tokens');
+fs.writeFileSync(path.join(ROOT, 'tokens.json'), JSON.stringify(tokens, null, 2));
+const TK = [['appBg', 'фон окна'], ['panel', 'панели'], ['border', 'границы'], ['text', 'текст'], ['text2', 'текст вторичный'],
+  ['accent', 'акцент'], ['accentSoft', 'выделение'], ['work', 'рабочая область'], ['danger', 'ошибка'], ['success', 'успех'], ['warning', 'внимание']];
+const cell = c => `<td><span style="display:inline-block;width:3mm;height:3mm;border:0.2mm solid #999;background:${c};vertical-align:middle"></span> ${c}</td>`;
+const tokenRows = TK.map(([k, n]) => `<tr><td>${k}<br><span class="note">${n}</span></td>` +
+  ['light', 'dark', 'contrast'].map(th => cell(tokens.themes[th][k])).join('') + '</tr>').join('');
+
 const css = fs.readFileSync(path.join(__dirname, 'style.css'), 'utf8');
 const body = fs.readFileSync(path.join(__dirname, 'content.html'), 'utf8')
-  .replace(/\{\{svg:([\w-]+)\}\}/g, (_, n) => svg(n));
+  .replace(/\{\{svg:([\w-]+)\}\}/g, (_, n) => svg(n))
+  .replace('{{tokens}}', tokenRows)
+  .replace('{{iconcount}}', Object.keys(require('./icons').ICONS).length);
 
 fs.writeFileSync(OUT_HTML, `<!doctype html>
 <html lang="ru"><head><meta charset="utf-8">

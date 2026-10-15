@@ -35,7 +35,8 @@ td.c, th.c { text-align: center; }
 
 figure { margin: 2mm 0; text-align: center; break-inside: avoid; }
 figure svg { max-width: 100%; height: auto; }
-figure.full svg { width: 100%; max-height: 160mm; }
+figure.full svg { width: 100%; max-height: 138mm; }
+.pair figure svg { max-height: 68mm; width: auto; }
 figure.screen svg { width: 255mm; height: auto; max-height: 160mm; border: 0.25mm solid #C9CED6; }
 figcaption { font-size: 9.5pt; color: #5C6370; margin-top: 1.5mm; }
 
@@ -60,3 +61,8 @@ figcaption { font-size: 9.5pt; color: #5C6370; margin-top: 1.5mm; }
 .steps { counter-reset: s; }
 .scn { border-left: 1mm solid #4F46E5; padding: 1mm 0 1mm 3mm; margin: 0 0 3mm; break-inside: avoid; }
 .scn b.t { display: block; margin-bottom: 1mm; }
+
+section.tight table { font-size: 8.8pt; margin: 1mm 0 2mm; }
+section.tight th, section.tight td { padding: 0.7mm 1.5mm; }
+section.tight p { margin-bottom: 1.2mm; }
+figure.mid svg { max-height: 100mm; }
