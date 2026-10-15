@@ -23,7 +23,7 @@ const themes = {
     text: '#FFFFFF', text2: '#FFFFFF', text3: '#D0D0D0',
     accent: '#FFD60A', accentHover: '#FFE45C', accentPressed: '#E6C000', accentSoft: '#3D3300', onAccent: '#000000',
     work: '#1A1A1A', danger: '#FF6B6B', success: '#5CFF8A', warning: '#FFB020', focus: '#00E5FF',
-    overlay: 'rgba(0,0,0,0.75)', shadow: 'rgba(0,0,0,0)',
+    overlay: 'rgba(0,0,0,0.75)', shadow: 'rgba(0,0,0,0)', disabledBg: '#333333', tooltipBg: '#262626', tooltipFg: '#FFFFFF',
   },
 };
 
