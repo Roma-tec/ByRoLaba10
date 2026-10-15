@@ -11,7 +11,7 @@ const OUT_PDF = path.join(ROOT, 'ByRoLaba10_Proekt_interfeysa.pdf');
 const SVG_DIR = path.join(ROOT, 'svg');
 
 // Каждый модуль экспортирует объект { имя: () => '<svg ...>' }
-const modules = ['diagrams', 'screens', 'kit'].filter(m => fs.existsSync(path.join(__dirname, m + '.js')));
+const modules = ['diagrams', 'flow', 'wireframes', 'screens', 'kit'].filter(m => fs.existsSync(path.join(__dirname, m + '.js')));
 const gens = Object.assign({}, ...modules.map(m => require('./' + m)));
 
 fs.mkdirSync(path.dirname(OUT_HTML), { recursive: true });
