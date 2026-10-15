@@ -1,0 +1,62 @@
+@page { size: A4 landscape; margin: 12mm 14mm; }
+
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 11pt;
+  line-height: 1.4;
+  color: #1F2329;
+  background: #fff;
+}
+
+section { break-before: page; }
+section:first-of-type { break-before: auto; }
+
+h1 { font-size: 20pt; margin: 0 0 4mm; color: #1F2329; }
+h2 { font-size: 15pt; margin: 0 0 3mm; color: #4F46E5; border-bottom: 0.6mm solid #4F46E5; padding-bottom: 1.5mm; }
+h3 { font-size: 12pt; margin: 4mm 0 2mm; }
+h4 { font-size: 11pt; margin: 3mm 0 1mm; }
+p { margin: 0 0 2mm; text-align: justify; }
+ul, ol { margin: 0 0 2mm; padding-left: 6mm; }
+li { margin-bottom: 0.6mm; }
+
+table { border-collapse: collapse; width: 100%; margin: 2mm 0 3mm; font-size: 9.5pt; }
+th, td { border: 0.25mm solid #9AA1AD; padding: 1.2mm 2mm; vertical-align: top; text-align: left; }
+th { background: #EEF0FF; }
+td.c, th.c { text-align: center; }
+
+.cols { column-count: 2; column-gap: 8mm; }
+.cols h3 { break-after: avoid; }
+.avoid { break-inside: avoid; }
+.note { color: #5C6370; font-size: 9.5pt; }
+.small { font-size: 9.5pt; }
+
+figure { margin: 2mm 0; text-align: center; break-inside: avoid; }
+figure svg { max-width: 100%; height: auto; }
+figure.full svg { width: 100%; max-height: 160mm; }
+figure.screen svg { width: 255mm; height: auto; max-height: 160mm; border: 0.25mm solid #C9CED6; }
+figcaption { font-size: 9.5pt; color: #5C6370; margin-top: 1.5mm; }
+
+.pair { display: flex; gap: 5mm; }
+.pair > figure { flex: 1; }
+
+/* титульный лист */
+.title { height: 180mm; display: flex; flex-direction: column; justify-content: space-between; }
+.title .org { text-align: center; font-size: 12pt; }
+.title .main { text-align: center; }
+.title .main .lab { font-size: 14pt; color: #5C6370; }
+.title .main .name { font-size: 26pt; font-weight: 700; margin: 4mm 0; }
+.title .main .var { font-size: 16pt; color: #4F46E5; }
+.title .who { align-self: flex-end; width: 110mm; font-size: 12pt; }
+.title .who td { border: none; padding: 0.8mm 0; font-size: 12pt; }
+.title .city { text-align: center; font-size: 11pt; }
+
+.toc { columns: 2; column-gap: 10mm; }
+.toc li { margin-bottom: 1.2mm; }
+
+.persona { border: 0.3mm solid #C9CED6; border-radius: 2mm; padding: 3mm 4mm; break-inside: avoid; margin-bottom: 3mm; }
+.steps { counter-reset: s; }
+.scn { border-left: 1mm solid #4F46E5; padding: 1mm 0 1mm 3mm; margin: 0 0 3mm; break-inside: avoid; }
+.scn b.t { display: block; margin-bottom: 1mm; }
